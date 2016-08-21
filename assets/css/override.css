@@ -1,0 +1,77 @@
+@charset="utf-8";
+
+@font-face {
+  font-family: 'Open Sans';
+  src: url('../source+sans+pro-400.eot');
+  src: url('../fonts/source+sans+pro-400.eot?#iefix') format('embedded-opentype'),
+  url('../fonts/source+sans+pro-400.woff') format('woff'),
+  url('../fonts/source+sans+pro-400.ttf') format('truetype'),
+  url('../fonts/source+sans+pro-400.svg') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+body{
+	margin: 0;
+	padding: 20px;
+	font-family: 'Open Sans';
+}
+
+.bg-bright{
+	background: #EFEFEF;
+}
+
+.bg-white{
+	background: #FEFEFE;
+}
+
+.bg-dark{
+	color: #CCC;
+	padding:20px 40px;
+	background: #2C3134;
+}
+
+.bg-dark i{
+	color: #666;
+}
+
+.weather-container{
+	width: 350px;
+	margin: 0 auto;
+	box-shadow: 0px 0px 15px #CCC;
+}
+
+.weather-refresh{
+	color: #C1C6CA;
+	text-align: right;
+}
+
+.weather-actual{
+	color: #717C81;
+	font-size: 72px;
+}
+
+.weather-temperature{
+	color: #666;
+	font-size: 38px;
+	line-height: 45px;
+}
+
+.weather-description{
+	color: #999;
+	font-size: 16px;
+	line-height:30px;
+}
+
+.weather-location{
+	color: #CCC;
+	font-size: 16px;
+	line-height:16px;
+}
+
+.weather-date{
+	color: white;
+	padding: 5px 10px;
+	text-align: center;
+	background: #7ED6DA;
+}

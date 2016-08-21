@@ -1,0 +1,23 @@
+{
+  "name": "angular-weather-directive",
+  "description": "Directive written in AngularJS that wraps a configurable weather widget",
+  "main": "index.html",
+  "authors": [
+    "TwisterMW <marc.hernandez@twiscript.com>"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/TwisterMW/angular-weather-directive",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components"
+  ],
+  "dependencies": {
+    "jquery": "^2.2.4",
+    "bootstrap": "^3.3.7",
+    "angular": "^1.5.8",
+    "angular-route": "^1.5.8",
+    "bootstrap-css": "^3.3.6",
+    "moment": "^2.14.1"
+  }
+}

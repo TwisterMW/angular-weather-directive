@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en" data-ng-app="App">
+<head>
+	<meta charset="UTF-8">
+	<title>Angular Weather Directive</title>
+	<link rel="icon" type="image/png" href="favicon.png" />
+	<!-- build:css css/app.css -->
+	<!-- bower:css -->
+	<link rel="stylesheet" href="bower_components/bootstrap-css/css/bootstrap.min.css" />
+	<!-- endbower -->
+	<!-- include: "type": "css", "files": "assets/**/**/*.css" -->
+	<link rel="stylesheet" type="text/css" href="assets/css/override.css" />
+	<link rel="stylesheet" type="text/css" href="assets/weather-icons/css/weather-icons-wind.css" />
+	<link rel="stylesheet" type="text/css" href="assets/weather-icons/css/weather-icons-wind.min.css" />
+	<link rel="stylesheet" type="text/css" href="assets/weather-icons/css/weather-icons.css" />
+	<link rel="stylesheet" type="text/css" href="assets/weather-icons/css/weather-icons.min.css" />
+	<!-- /include -->
+	<!-- endbuild -->
+</head>
+<body data-ng-controller="mainController as vm">
+	
+	<div class="container">
+		<div class="panel weather-container">
+			<div class="panel-heading bg-bright">
+				<div class="row">
+					<div class="col-md-3 pull-right weather-refresh">
+						<a href="#" data-ng-click="vm.weather.reload()">
+							<i class="glyphicon glyphicon-repeat"></i>
+						</a>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-md-12 text-center weather-actual">
+						<i class="wi wi-night-sleet"></i>
+					</div>
+				</div><br />
+				<div class="row bg-white">
+					<div class="col-md-3 weather-temperature">
+						{{ vm.weather.temperature }}&deg;C
+					</div>
+					<div class="col-md-7">
+						<div class="row">
+							<div class="col-md-12 weather-description">
+								{{ vm.weather.description }}
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-md-12 weather-location">
+								<small>{{ vm.weather.location }}</small>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-2 weather-date">
+						<strong>{{ vm.weather.short_date }}</strong>
+					</div>
+				</div>
+			</div>
+			<div class="panel-footer bg-dark">
+				<div class="row">
+					<div class="col-md-4 text-center">
+						<i class="wi wi-strong-wind"></i> {{ vm.weather.mph }} MPH
+					</div>
+					<div class="col-md-4 text-center">
+						<i class="wi wi-humidity"></i> {{ vm.weather.humidity }}%
+					</div>
+					<div class="col-md-4 text-center">
+						<i class="wi wi-day-sunny"></i> {{ vm.weather.sunlight }}%
+					</div>
+				</div>
+				<div class="row">
+					
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- build:js js/app.js -->
+	<!-- bower:js -->
+	<script src="bower_components/jquery/dist/jquery.js"></script>
+	<script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
+	<script src="bower_components/angular/angular.js"></script>
+	<script src="bower_components/angular-route/angular-route.js"></script>
+	<script src="bower_components/bootstrap-css/js/bootstrap.min.js"></script>
+	<script src="bower_components/moment/moment.js"></script>
+	<!-- endbower -->
+	<!-- include: "type": "js", "files": "app/**/**/*.js" -->
+	<script src="app/app.routes.js"></script>
+	<script src="app/components/main/mainController.js"></script>
+	<script src="app/components/main/weather-dir/weather-directive.js"></script>
+	<!-- /include -->
+	<!-- endbuild -->
+</body>
+</html>
