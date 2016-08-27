@@ -20,33 +20,30 @@
 <body data-ng-controller="mainController as vm">
 	
 	<div class="container">
-		<div class="panel weather-container">
-			<div class="panel-heading bg-bright">
+		<div class="panel weather-container" data-ng-cloack>
+			<div class="panel-heading bg-white no-padding-bot">
 				<div class="row">
-					<div class="col-md-3 pull-right weather-refresh">
-						<a href="#" data-ng-click="vm.weather.reload()">
-							<i class="glyphicon glyphicon-repeat"></i>
-						</a>
+					<div class="col-md-12 weather-location">
+						<div class="input-group">
+							<span class="input-group-addon"><i class="glyphicon glyphicon-pushpin"></i> Location</span>
+							<input type="text" class="form-control" data-ng-blur="vm.weather.api_call(vm.weather.location)" 
+								data-ng-model="vm.weather.location" />
+						</div>
 					</div>
 				</div>
 				<div class="row">
 					<div class="col-md-12 text-center weather-actual">
-						<i class="wi wi-night-sleet"></i>
+						<i class="wi {{ vm.weather.owData.weather[0].icon }}"></i>
 					</div>
 				</div><br />
-				<div class="row bg-white">
+				<div class="row bg-bright">
 					<div class="col-md-3 weather-temperature">
-						{{ vm.weather.temperature }}&deg;C
+						{{ vm.weather.owData.main.temp | celsius }}&deg;C
 					</div>
 					<div class="col-md-7">
 						<div class="row">
 							<div class="col-md-12 weather-description">
-								{{ vm.weather.description }}
-							</div>
-						</div>
-						<div class="row">
-							<div class="col-md-12 weather-location">
-								<small>{{ vm.weather.location }}</small>
+								{{ vm.weather.owData.weather[0].description | capitalize }}
 							</div>
 						</div>
 					</div>
@@ -58,17 +55,14 @@
 			<div class="panel-footer bg-dark">
 				<div class="row">
 					<div class="col-md-4 text-center">
-						<i class="wi wi-strong-wind"></i> {{ vm.weather.mph }} MPH
+						<i class="wi wi-strong-wind"></i><br />{{ vm.weather.owData.wind.speed }} km/h
 					</div>
 					<div class="col-md-4 text-center">
-						<i class="wi wi-humidity"></i> {{ vm.weather.humidity }}%
+						<i class="wi wi-humidity"></i><br />{{ vm.weather.owData.main.humidity }}%
 					</div>
 					<div class="col-md-4 text-center">
-						<i class="wi wi-day-sunny"></i> {{ vm.weather.sunlight }}%
+						<i class="wi wi-cloud"></i><br />{{ vm.weather.owData.clouds.all }}%
 					</div>
-				</div>
-				<div class="row">
-					
 				</div>
 			</div>
 		</div>
