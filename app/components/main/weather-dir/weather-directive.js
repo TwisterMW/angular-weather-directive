@@ -6,7 +6,9 @@
 		.directive('weatherDir', weatherDir);
 
 		function weatherDir(){
-			
+			var directive = {
+				
+			};
 		}
 
 })();

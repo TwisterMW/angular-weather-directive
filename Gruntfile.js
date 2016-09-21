@@ -11,14 +11,14 @@ module.exports = function(grunt){
         // Automatically detects bower_component updates and executes wiredep task
         watch: {
             js: {
-                files: ['js/*', 'src/*.js'],
+                files: ['app/**/*.js', 'app/*.js'],
                 tasks: ['jshint']
             }
         },
 
         // Automatically detects JS errors
         jshint: {
-            all: ['Gruntfile.js', 'js/*.js', 'src/*.js']
+            all: ['Gruntfile.js', 'app/**/*.js', 'app/*.js']
         },
 
         // Mocks a server on custom port

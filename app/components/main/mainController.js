@@ -7,7 +7,7 @@
 		.filter('capitalize', capitalize)
 		.controller('mainController', mainController);
 
-	mainController.$inject = ['$timeout', '$http']
+	mainController.$inject = ['$timeout', '$http'];
 
 	function mainController($timeout, $http){
 		var vm = this;
@@ -39,7 +39,7 @@
 								lon = gApiData.data.results[0].geometry.location.lng;
 							}
 							
-							var api_key = "&APPID=18a4db4eaca2f95180dbabb7fa6c97ca"
+							var api_key = "&APPID=18a4db4eaca2f95180dbabb7fa6c97ca";
 
 							$http.get("http://api.openweathermap.org/data/2.5/weather?lat=" + lat + "&lon=" + lon + api_key)
 								.then(function(owData){
@@ -48,10 +48,12 @@
 									vm.weather.owData.wind.speed = Math.round(vm.weather.owData.wind.speed * 36);
 
 									vm.weather.short_date = moment(new Date(vm.weather.owData.dt * 1000)).format('MMM DD');
+
+									return true;
 								});
 						});
 				}
-			}
+			};
 
 			vm.weather.parse_icons();
 		}
@@ -62,12 +64,12 @@
 	function celsius(){
 		return function(input){
 			return parseInt(input) - 273;
-		}
+		};
 	}
 
 	function capitalize(){
 		return function(input){
-			if(input != null){
+			if(input !== null && input !== undefined && input !== ''){
 				input = input.toLowerCase().split(' ');
 
 				for(var i = 0; i < input.length; i++){
@@ -78,7 +80,7 @@
 
 			    return input.join(' ');
 			}
-		}
+		};
 	}
 
 })();
