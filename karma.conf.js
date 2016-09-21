@@ -18,7 +18,8 @@ module.exports = function(config) {
         'bower_components/angular/angular.js',
         'bower_components/angular-route/angular-route.js',
         'node_modules/angular-mocks/angular-mocks.js',
-        'app/components/**/*.js'
+        'app/components/**/*.js',
+        'app/components/**/**/*.js'
     ],
 
 
@@ -59,7 +60,7 @@ module.exports = function(config) {
 
     // start these browsers
     // available browser launchers: https://npmjs.org/browse/keyword/karma-launcher
-    browsers: ['PhantomJS'],
+    browsers: ['Chrome'],
 
     customLaunchers: {
         Chrome_without_security: {

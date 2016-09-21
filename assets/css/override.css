@@ -11,18 +11,23 @@
   font-style: normal;
 }
 
+*{font-family: 'Open Sans';}
+ 
 body{
 	margin: 0;
 	padding: 20px;
-	font-family: 'Open Sans';
+}
+
+.pagination-dots{
+	color: #7ED6DA;
+}
+
+.bg-white{
+	background: #FFF;
 }
 
 .bg-bright{
 	background: #EFEFEF;
-}
-
-.bg-white{
-	background: #FEFEFE;
 }
 
 .bg-dark{
@@ -47,6 +52,7 @@ body{
 }
 
 .weather-actual{
+	padding:40px 0 20px 0;
 	color: #717C81;
 	font-size: 72px;
 }
@@ -58,9 +64,9 @@ body{
 }
 
 .weather-description{
+	padding-top:10px;
 	color: #999;
-	font-size: 16px;
-	line-height:30px;
+	font-size: 22px;
 }
 
 .weather-location{
@@ -74,4 +80,8 @@ body{
 	padding: 5px 10px;
 	text-align: center;
 	background: #7ED6DA;
+}
+
+.no-padding-bot{
+	padding-bottom:0 !important;
 }
